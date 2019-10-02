@@ -1,5 +1,6 @@
 # ScriptenApp
-A tool to help you learn glsl
+A tool to help you learn glsl.
+This is very new, a lot of even basic features are lacking, I am working on it 💪🏻
 
 # Run it on MacOS
 `cd targets/macOS/`
