@@ -3,11 +3,13 @@ A tool to help you learn glsl.
 This is very new, a lot of even basic features are lacking, I am working on it 💪🏻
 
 # Run it on MacOS
-`cd targets/macOS/`
+`git checkout mac` \
+`cd targets/macOS/` \
 `./scripten-desktop`
 
 # Run it on Windows10
-`cd targets\windows10`
+`git checkout windows` \
+`cd targets\windows10` \
 `scripten-desktop.exe`
 
 # Screenshots
