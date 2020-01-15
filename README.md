@@ -5,12 +5,12 @@ This is very new, a lot of even basic features are lacking, I am working on it ð
 # Run it on MacOS
 `git checkout mac` \
 `cd targets/macOS/` \
-`./scripten-desktop` \
+`./scripten-desktop`
 
 # Run it on Windows10
 `git checkout windows` \
 `cd targets\windows10` \
-`scripten-desktop.exe` \
+`scripten-desktop.exe`
 
 # Screenshots
 ![Alt text](/screenshots/hello.png "Welcome")
