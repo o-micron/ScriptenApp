@@ -16,3 +16,5 @@ This is very new, a lot of even basic features are lacking, I am working on it ð
 ![Alt text](/screenshots/hello.png "Welcome")
 ![Alt text](/screenshots/before.png "Before")
 ![Alt text](/screenshots/after.png "After")
+![Alt text](/screenshots/vertex_shader_uniforms.png "vertex shader uniforms")
+![Alt text](/screenshots/fragment_shader_uniforms.png "fragment shader uniforms")
