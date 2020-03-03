@@ -1,5 +1,8 @@
 # ScriptenApp
 A tool to help you learn glsl.
+
+Written in C++17 and compiled to web assembly.
+
 This is very new, a lot of even basic features are lacking, I am working on it 💪🏻
 
 # Youtube video
