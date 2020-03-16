@@ -1,6 +1,4 @@
-var statusElement = document.getElementById("console-status");
 var progressElement = document.getElementById("progress");
-
 var consoleLogs = "";
 
 function consoleLog(text) {
@@ -11,10 +9,7 @@ var Module = {
   preRun: [],
   postRun: [
     function () {
-      // handle scripten c api
       scriptenCApi();
-      // restore blockly workspace
-      // restoreBlocklyWorkspace();
     }
   ],
   print: (function () {
@@ -83,3 +78,14 @@ window.onerror = function (event) {
     if (text) Module.printErr("[post-exception status] " + text);
   };
 };
+
+var canvas_parent = document.getElementById("canvas-parent");
+canvas_parent.style.backgroundColor = "#000";
+var canvas = document.getElementById("canvas");
+canvas.width = canvas_parent.offsetWidth;
+canvas.height = canvas_parent.offsetHeight;
+canvas.style.width = "100%";
+canvas.style.height = "100%";
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+canvas.style.backgroundColor = "#000";

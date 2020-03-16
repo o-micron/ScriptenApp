@@ -1,192 +1,43 @@
-* {
-  font-family: 'Jetbrains Mono';
-  src: url('https://github.com/JetBrains/JetBrainsMono/blob/master/ttf/JetBrainsMono-Regular.ttf?raw=true'); /* IE9 Compat Modes */
-  src: url('https://github.com/JetBrains/JetBrainsMono/blob/master/ttf/JetBrainsMono-Regular.ttf?raw=true') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://github.com/JetBrains/JetBrainsMono/blob/master/ttf/JetBrainsMono-Regular.ttf?raw=true') format('woff'), /* Modern Browsers */
-       url('https://github.com/JetBrains/JetBrainsMono/blob/master/ttf/JetBrainsMono-Regular.ttf?raw=true')  format('truetype'), /* Safari, Android, iOS */
-       url('https://github.com/JetBrains/JetBrainsMono/blob/master/ttf/JetBrainsMono-Regular.ttf?raw=true') format('svg'); /* Legacy iOS */
+html {
+  height: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 body {
+  height: 100%;
+}
+
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.flex-fill {
+  flex: 1;
+}
+
+#editor-parent {
+  border: 0;
   margin: 0;
   padding: 0;
 }
 
-.core {
-  margin: 0px;
-  margin-top: 5px;
-}
-
-.righty {
-  background-color: transparent;
-  height: 100%;
-}
-
-.lefty {
-  background-color: transparent;
-  height: 100%;
-}
-
-.console {
-  margin-top: 5px;
-}
-
-.card-header {
-  padding: 3px 5px;
-}
-
-.console-header {
-  height: 30px;
-  font-size: 16px;
-}
-
-.console-container {
+#canvas-parent {
+  border: 0;
+  margin: 0;
   padding: 0;
-  margin: 0;
-  border: 0;
-  height: 150px;
-}
-
-.console-body {
-  padding: 5px;
-  margin: 0;
-  border: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  font-size: 13px;
-}
-
-#editor{
-  width: 100%;
-  height: 725px;
+  background-color: black;
 }
 
 canvas {
-  width: 100%;
-  height: 725px;
-}
-
-.emscripten {
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-div.emscripten {
-  text-align: center;
-}
-div.emscripten_border {
-  border: 1px solid black;
-}
-
-canvas.emscripten {
-  border: 0px none;
-  background-color: black;
-}
-
-#emscripten_logo {
-  display: inline-block;
+  border: 0;
   margin: 0;
-}
-
-.spinner {
-  height: 30px;
-  width: 30px;
-  margin: 0;
-  margin-top: 20px;
-  margin-left: 20px;
-  display: inline-block;
-  vertical-align: top;
-
-  -webkit-animation: rotation 0.8s linear infinite;
-  -moz-animation: rotation 0.8s linear infinite;
-  -o-animation: rotation 0.8s linear infinite;
-  animation: rotation 0.8s linear infinite;
-
-  border-left: 5px solid rgb(235, 235, 235);
-  border-right: 5px solid rgb(235, 235, 235);
-  border-bottom: 5px solid rgb(235, 235, 235);
-  border-top: 5px solid rgb(120, 120, 120);
-
-  border-radius: 100%;
-  background-color: rgb(189, 215, 46);
-}
-
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-moz-keyframes rotation {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-o-keyframes rotation {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#status {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 30px;
-  margin-left: 20px;
-  font-weight: bold;
-  color: rgb(120, 120, 120);
-}
-
-#progress {
-  height: 20px;
-  width: 300px;
-}
-
-#controls {
-  display: inline-block;
-  float: right;
-  vertical-align: top;
-  margin-top: 30px;
-  margin-right: 20px;
-}
-
-#output {
-  width: 100%;
-  height: 200px;
-  margin: 0 auto;
-  margin-top: 10px;
-  border-left: 0px;
-  border-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  display: block;
+  padding: 0;
   background-color: black;
-  color: white;
-  font-family: "Lucida Console", Monaco, monospace;
-  outline: none;
-}
-
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-  padding-right: 2px;
-  padding-left: 2px;
 }

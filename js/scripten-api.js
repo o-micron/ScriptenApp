@@ -223,7 +223,7 @@ function ScriptenModule() {
     this.set_entity_scale_js = function (entity_id, x, y, z) {
         this.set_entity_scale(entity_id, x, y, z);
     }
-    this.get_pbr_shader_sources_js = function() {
+    this.get_pbr_shader_sources_js = function () {
         var arr = [];
         var result = this.get_pbr_shader_sources();
         for (var i = 0; i < result.size(); i++) {
@@ -231,10 +231,10 @@ function ScriptenModule() {
         }
         return arr;
     }
-    this.set_pbr_shader_sources_js = function(shaderSources) {
+    this.set_pbr_shader_sources_js = function (shaderSources) {
         this.set_pbr_shader_sources(shaderSources);
     }
-    this.get_post_shader_sources_js = function() {
+    this.get_post_shader_sources_js = function () {
         var arr = [];
         var result = this.get_post_shader_sources();
         for (var i = 0; i < result.size(); i++) {
@@ -242,7 +242,7 @@ function ScriptenModule() {
         }
         return arr;
     }
-    this.set_post_shader_sources_js = function(shaderSources) {
+    this.set_post_shader_sources_js = function (shaderSources) {
         this.set_post_shader_sources(shaderSources);
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -252,12 +252,23 @@ var scriptenModule = null;
 
 function scriptenCApi() {
     scriptenModule = new ScriptenModule();
-    // keep resize events flowing from window to c ..
     function reportWindowSize() {
-        var theCanvas = document.getElementById('canvas');
-        scriptenModule.resize_browser_window(theCanvas.offsetWidth, theCanvas.offsetHeight);
-        document.getElementById("editor").setAttribute("style","height:700px");
+        var canvas_parent = document.getElementById("canvas-parent");
+        var canvas = document.getElementById("canvas");
+        canvas.width = canvas_parent.offsetWidth;
+        canvas.height = canvas_parent.offsetHeight;
+        scriptenModule.resize_browser_window(canvas.width, canvas.height);
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
     }
-    window.onresize += reportWindowSize;
     reportWindowSize();
+}
+window.onresize = function () {
+    var canvas_parent = document.getElementById("canvas-parent");
+    var canvas = document.getElementById("canvas");
+    canvas.width = canvas_parent.offsetWidth;
+    canvas.height = canvas_parent.offsetHeight;
+    scriptenModule.resize_browser_window(canvas.width, canvas.height);
+    // canvas.width = canvas.offsetWidth;
+    // canvas.height = canvas.offsetHeight;
 }
